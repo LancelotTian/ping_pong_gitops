@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-pong
+  labels:
+    app: ping-pong
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-pong
+  template:
+    metadata:
+      labels:
+        app: ping-pong
+    spec:
+      containers:
+      - name: ping-pong
+        image: quay-default.apps.cluster-beijing-1fdf.beijing-1fdf.example.opentlc.com/leon/ping-pong:8
+        ports:
+        - containerPort: 8080
+          name: http
+      imagePullSecrets:
+        - name: regcred
