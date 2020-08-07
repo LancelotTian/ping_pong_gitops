@@ -20,5 +20,11 @@ spec:
         ports:
         - containerPort: 8080
           name: http
+        volumeMounts:
+        - mountPath: /var/log/ping-pong
+          name: log-volume
       imagePullSecrets:
-        - name: quayio-regcred
+      - name: quayio-regcred
+      volumes:
+      - name: log-volume
+        emptyDir: {}
