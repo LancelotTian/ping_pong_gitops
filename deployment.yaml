@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ping-pong
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ping-pong
@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: quay-default.apps.cluster-beijing-1fdf.beijing-1fdf.example.opentlc.com/leon/ping-pong:8
+        image: quay.io/lancelottian/ping-pong:3
         ports:
         - containerPort: 8080
           name: http
       imagePullSecrets:
-        - name: regcred
+        - name: quayio-regcred
