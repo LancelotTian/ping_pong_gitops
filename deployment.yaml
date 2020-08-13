@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: quay.io/lancelottian/ping-pong:3
+        image: quay.io/lancelottian/ping-pong:27
         ports:
         - containerPort: 8080
           name: http
