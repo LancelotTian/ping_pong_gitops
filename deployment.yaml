@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: quay.io/lancelottian/ping-pong:5
+        image: quay.io/lancelottian/ping-pong:11
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
